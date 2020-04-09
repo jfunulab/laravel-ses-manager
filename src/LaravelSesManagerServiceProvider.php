@@ -1,6 +1,6 @@
 <?php
 
-namespace Motia\LaravelSesManager;
+namespace Jfunu\LaravelSesManager;
 
 use Illuminate\Support\ServiceProvider;
 

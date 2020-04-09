@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Contracts;
+namespace Jfunu\LaravelSesManager\Contracts;
 
-use Motia\LaravelSesManager\Exceptions\SesConfirmationFailed;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
 
 interface SESMessageValidatorContract
 {

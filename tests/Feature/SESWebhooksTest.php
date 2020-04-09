@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Tests\Feature;
+namespace Jfunu\LaravelSesManager\Tests\Feature;
 
 
 use Illuminate\Support\Facades\Bus;
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\Jobs\HandleSESBounce;
-use Motia\LaravelSesManager\Jobs\HandleSESComplaint;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use Motia\LaravelSesManager\Tests\TestCase;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
+use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Tests\TestCase;
 
 class SESWebhooksTest extends TestCase
 {

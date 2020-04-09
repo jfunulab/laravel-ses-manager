@@ -1,16 +1,16 @@
 <?php
 
 
-namespace Motia\LaravelSesManager;
+namespace Jfunu\LaravelSesManager;
 
 
 use Aws\Sns\Exception\InvalidSnsMessageException;
 use Aws\Sns\Message;
 use Aws\Sns\MessageValidator;
 use Illuminate\Support\Facades\Log;
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\Exceptions\SesConfirmationFailed;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
 use GuzzleHttp;
 
 class SESMessageValidator implements SESMessageValidatorContract

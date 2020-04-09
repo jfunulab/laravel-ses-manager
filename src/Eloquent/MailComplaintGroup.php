@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Eloquent;
+namespace Jfunu\LaravelSesManager\Eloquent;
 
 
 use Illuminate\Database\Eloquent\Model;

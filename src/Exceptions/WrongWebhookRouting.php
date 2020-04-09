@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Exceptions;
+namespace Jfunu\LaravelSesManager\Exceptions;
 
 
 class WrongWebhookRouting extends \Exception

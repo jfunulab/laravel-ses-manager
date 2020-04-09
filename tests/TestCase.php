@@ -1,9 +1,9 @@
 <?php
 
-namespace Motia\LaravelSesManager\Tests;
+namespace Jfunu\LaravelSesManager\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Motia\LaravelSesManager\Controllers\SESWebhookController;
+use Jfunu\LaravelSesManager\Controllers\SESWebhookController;
 
 class TestCase extends Orchestra
 {
@@ -35,7 +35,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \Motia\LaravelSesManager\LaravelSesManagerServiceProvider::class,
+            \Jfunu\LaravelSesManager\LaravelSesManagerServiceProvider::class,
         ];
     }
     /**

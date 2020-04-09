@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Motia\LaravelSesManager;
+namespace Jfunu\LaravelSesManager;
 
 use Illuminate\Http\Request;
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
 use Symfony\Component\HttpFoundation\Response;
 
 class SESConfirmWebhookMiddleware

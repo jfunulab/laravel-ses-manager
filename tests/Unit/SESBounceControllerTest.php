@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Tests\Unit;
+namespace Jfunu\LaravelSesManager\Tests\Unit;
 
 
 use Illuminate\Http\Request;
 use Mockery\Mock;
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\Controllers\SESWebhookController;
-use Motia\LaravelSesManager\SESConfirmWebhookMiddleware;
-use Motia\LaravelSesManager\SESMessageValidator;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use Motia\LaravelSesManager\Tests\TestCase;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\Controllers\SESWebhookController;
+use Jfunu\LaravelSesManager\SESConfirmWebhookMiddleware;
+use Jfunu\LaravelSesManager\SESMessageValidator;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Tests\TestCase;
 
 class SESBounceControllerTest extends TestCase
 {

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Jobs;
+namespace Jfunu\LaravelSesManager\Jobs;
 
 
 use Illuminate\Support\Facades\DB;
-use Motia\LaravelSesManager\Eloquent\MailComplaint;
-use Motia\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Jfunu\LaravelSesManager\Eloquent\MailComplaint;
+use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
 
 class HandleSESComplaint
 {

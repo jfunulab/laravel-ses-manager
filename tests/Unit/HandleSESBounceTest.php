@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Tests\Unit;
+namespace Jfunu\LaravelSesManager\Tests\Unit;
 
 
-use Motia\LaravelSesManager\Eloquent\BlackListGroup;
-use Motia\LaravelSesManager\Jobs\HandleSESBounce;
-use Motia\LaravelSesManager\Tests\TestCase;
+use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
+use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
+use Jfunu\LaravelSesManager\Tests\TestCase;
 
 class HandleSESBounceTest extends TestCase
 {

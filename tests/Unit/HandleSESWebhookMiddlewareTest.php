@@ -1,21 +1,21 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Tests\Unit;
+namespace Jfunu\LaravelSesManager\Tests\Unit;
 
 
 use Illuminate\Http\Request;
 use Mockery\Mock;
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\SESConfirmWebhookMiddleware;
-use Motia\LaravelSesManager\SESMessageValidator;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use Motia\LaravelSesManager\Tests\TestCase;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\SESConfirmWebhookMiddleware;
+use Jfunu\LaravelSesManager\SESMessageValidator;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Tests\TestCase;
 
 class HandleSESWebhookMiddlewareTest extends TestCase
 {
   /**
-   * @throws \Motia\LaravelSesManager\Exceptions\SesConfirmationFailed
+   * @throws \Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed
    */
   public function testConfirmReturnFalseForFailingValidator() {
     /**
@@ -45,7 +45,7 @@ class HandleSESWebhookMiddlewareTest extends TestCase
   }
 
   /**
-   * @throws \Motia\LaravelSesManager\Exceptions\SesConfirmationFailed
+   * @throws \Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed
    */
   public function testConfirmReturnTrue() {
     /**

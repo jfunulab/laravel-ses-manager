@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Tests\Unit;
+namespace Jfunu\LaravelSesManager\Tests\Unit;
 
 
-use Motia\LaravelSesManager\Eloquent\MailComplaintGroup;
-use Motia\LaravelSesManager\Jobs\HandleSESComplaint;
-use Motia\LaravelSesManager\Tests\TestCase;
+use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
+use Jfunu\LaravelSesManager\Tests\TestCase;
 
 class HandleSESComplaintTest extends TestCase
 {

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Controllers;
+namespace Jfunu\LaravelSesManager\Controllers;
 
-use Motia\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Motia\LaravelSesManager\Jobs\HandleSESBounce;
-use Motia\LaravelSesManager\Jobs\HandleSESComplaint;
-use Motia\LaravelSesManager\SESConfirmWebhookMiddleware;
-use Motia\LaravelSesManager\SESMessageValidator;
-use Motia\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
+use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
+use Jfunu\LaravelSesManager\SESConfirmWebhookMiddleware;
+use Jfunu\LaravelSesManager\SESMessageValidator;
+use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -31,7 +31,7 @@ class SESWebhookController extends Controller
   /**
    * @return string
    * @throws WrongWebhookRouting
-   * @throws \Motia\LaravelSesManager\Exceptions\SesConfirmationFailed
+   * @throws \Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed
    */
   public function bounce() {
     $message = $this->getMessageOfType('Bounce');

@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Motia\LaravelSesManager\Jobs;
+namespace Jfunu\LaravelSesManager\Jobs;
 
 
 use Illuminate\Support\Facades\DB;
-use Motia\LaravelSesManager\Eloquent\BlackListGroup;
-use Motia\LaravelSesManager\Eloquent\BlackListItem;
+use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
+use Jfunu\LaravelSesManager\Eloquent\BlackListItem;
 
 class HandleSESBounce
 {
