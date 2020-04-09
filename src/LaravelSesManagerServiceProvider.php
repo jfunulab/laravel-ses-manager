@@ -3,6 +3,7 @@
 namespace Jfunu\LaravelSesManager;
 
 use Illuminate\Support\ServiceProvider;
+use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
 
 class LaravelSesManagerServiceProvider extends ServiceProvider
 {
@@ -15,6 +16,8 @@ class LaravelSesManagerServiceProvider extends ServiceProvider
             $this->getConfigFilePath(),
             'ses-manager'
         );
+
+        $this->app->bind(SESMessageValidatorContract::class, SESMessageValidator::class);
     }
 
     public function boot()
