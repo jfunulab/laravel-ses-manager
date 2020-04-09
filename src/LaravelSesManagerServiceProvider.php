@@ -4,25 +4,28 @@ namespace Jfunu\LaravelSesManager;
 
 use Illuminate\Support\ServiceProvider;
 
-class LaravelSesManagerServiceProvider extends ServiceProvider {
-	public function register() { 
-		$this->loadMigrationsFrom(__DIR__.'/../migrations');
+class LaravelSesManagerServiceProvider extends ServiceProvider
+{
 
-	    $this->mergeConfigFrom(
-	      $this->getConfigFilePath(),
-	      'ses-manager'
-	    );
-  }
-  
-  public function boot()
-  {
-    $this->publishes([
-        $this->getConfigFilePath() => config_path('ses-manager.php'),
-    ]);
-  }
+    public function register()
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/../migrations');
 
-  private function getConfigFilePath()
-  {
-    return __DIR__ . '/config.php';
-  }
+        $this->mergeConfigFrom(
+            $this->getConfigFilePath(),
+            'ses-manager'
+        );
+    }
+
+    public function boot()
+    {
+        $this->publishes([
+            $this->getConfigFilePath() => config_path('ses-manager.php'),
+        ]);
+    }
+
+    private function getConfigFilePath()
+    {
+        return __DIR__ . '/config.php';
+    }
 }
