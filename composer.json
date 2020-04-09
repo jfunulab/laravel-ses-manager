@@ -35,7 +35,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jfunu\\LaravelSesManager\\LaravelSesEventsServiceProvider"
+                "Jfunu\\LaravelSesManager\\LaravelSesManagerServiceProvider"
             ]
         }
     }
