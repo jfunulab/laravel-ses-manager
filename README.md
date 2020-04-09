@@ -3,7 +3,7 @@ Logs AWS Simple Email Service bounces and complaints for Laravel app
 
 # Setup
 ```bash
-composer require Jfunu/laravel-ses-manager
+composer require jfunu/laravel-ses-manager
 php artisan migrate
 ```
 

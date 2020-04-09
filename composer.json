@@ -1,5 +1,5 @@
 {
-    "name": "Jfunu/laravel-ses-manager",
+    "name": "jfunu/laravel-ses-manager",
     "description": "Logs SES bounces and complaints for Laravel app",
     "type": "package",
     "license": "MIT",
@@ -24,7 +24,7 @@
     },
     "require": {
         "aws/aws-php-sns-message-validator": "^1.5",
-        "illuminate/support": "^5.8 | ^6.*"
+        "illuminate/support": "^5.8 | ^6.0"
     },
     "require-dev": {
         "orchestra/testbench": "^3.8"
