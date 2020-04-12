@@ -9,11 +9,10 @@ use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
 interface SESMessageValidatorContract
 {
   /**
-   * @param string $type
    * @return array mixed
    * @throws WrongWebhookRouting
    */
-  public function getMessageOfType($type);
+  public function getMessage();
 
   /**
    * @param array $message

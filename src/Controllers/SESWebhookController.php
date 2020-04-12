@@ -15,52 +15,41 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 
 class SESWebhookController extends Controller
 {
-  use DispatchesJobs;
-  
-  /**
-   * @var SESMessageValidator
-   */
-  private $SESMessageValidator;
+    use DispatchesJobs;
 
-  public function __construct(SESMessageValidatorContract $SESMessageValidator)
-  {
-    $this->SESMessageValidator = $SESMessageValidator;
-    $this->middleware(SESConfirmWebhookMiddleware::class);
-  }
+    /**
+     * @var SESMessageValidator
+     */
+    private $SESMessageValidator;
 
-  /**
-   * @return string
-   * @throws WrongWebhookRouting
-   * @throws \Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed
-   */
-  public function bounce() {
-    $message = $this->getMessageOfType('Bounce');
+    public function __construct(SESMessageValidatorContract $SESMessageValidator)
+    {
+        $this->SESMessageValidator = $SESMessageValidator;
+        $this->middleware(SESConfirmWebhookMiddleware::class);
+    }
 
-    $this->dispatchNow(new HandleSESBounce($message));
+    /**
+     * @return string
+     * @throws WrongWebhookRouting
+     */
+    public function bounce()
+    {
+        $message = $this->SESMessageValidator->getMessage();
 
-    return new Response('handled', 200);
-  }
+        $this->dispatchNow(new HandleSESBounce($message));
 
-  /**
-   * @throws WrongWebhookRouting
-   */
-  public function complaint() {
-    $message = $this->getMessageOfType('Complaint');
+        return new Response('handled', 200);
+    }
 
-    $this->dispatchNow(new HandleSESComplaint(
-      $message
-    ));
+    /**
+     * @throws WrongWebhookRouting
+     */
+    public function complaint()
+    {
+        $message = $this->SESMessageValidator->getMessage();
 
-    return new Response('handled', 200);
-  }
+        $this->dispatchNow(new HandleSESComplaint($message));
 
-  /**
-   * @param string $string
-   * @return mixed
-   * @throws WrongWebhookRouting
-   */
-  private function getMessageOfType(string $string)
-  {
-    return $this->SESMessageValidator->getMessageOfType($string);
-  }
+        return new Response('handled', 200);
+    }
 }

@@ -27,12 +27,12 @@ class SESConfirmWebhookMiddleware
    * @throws Exceptions\SesConfirmationFailed
    */
   function handle (Request $request, $next) {
-    $message = $this->messageValidatorContract->getConfirmationMessage();
 
-    if ($message) {
-      $this->messageValidatorContract->confirmSubscription($message);
-      return new Response('confirmed', 200);
-    }
-    return $next($request);
+      if ($this->messageValidatorContract->payload->notificationType == 'SubscriptionConfirmation') {
+          $this->messageValidatorContract->confirmSubscription($this->messageValidatorContract->payload->message);
+          return new Response('confirmed', 200);
+      }
+
+      return $next($request);
   }
 }

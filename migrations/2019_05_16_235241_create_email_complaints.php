@@ -22,7 +22,7 @@ class CreateEmailComplaints extends Migration
           $table->string('reason');
           $table->string('driver');
           $table->dateTime('complained_at');
-          $table->text('payload')->default('[]');
+          $table->json('payload');
 
           $table->timestamps();
         });

@@ -4,88 +4,56 @@
 namespace Jfunu\LaravelSesManager;
 
 
-use Aws\Sns\Exception\InvalidSnsMessageException;
-use Aws\Sns\Message;
-use Aws\Sns\MessageValidator;
-use Illuminate\Support\Facades\Log;
 use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
 use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use GuzzleHttp;
 
 class SESMessageValidator implements SESMessageValidatorContract
 {
-  public function getMessageOfType($type) {
-    $notification = $this->getNotificationOfType('Notification');
-    $messageStr = $notification['Message'];
+    public $payload;
 
-    if (!$messageStr) {
-      $str = json_encode($notification);
-      throw new \RuntimeException("Malformed notification: $str");
+    public function __construct()
+    {
+        $this->payload = $this->getPayload();
     }
 
-    $message = json_decode($messageStr, true);
-
-    if(($message['notificationType'] ?? null) !== $type) {
-      throw new WrongWebhookRouting(
-        'ses',
-        $type,
-        $message
-      );
+    public function getMessage()
+    {
+        return $this->payload->message;
     }
 
-    return $message;
-  }
+    /**
+     * @param array $message
+     * @throws SesConfirmationFailed
+     */
+    public function confirmSubscription(array $message)
+    {
+        $url = $message['SubscribeURL'];
+        $handle = curl_init($message['SubscribeURL']);
+        curl_setopt($handle, CURLOPT_URL, $url);
+        curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 
-  public function getConfirmationMessage() {
-    return $this->getNotificationOfType('SubscriptionConfirmation');
-  }
+        $output = curl_exec($handle);
 
-  /**
-   * @param array $message
-   * @throws SesConfirmationFailed
-   */
-  public function confirmSubscription(array $message) {
-    $ch = curl_init($message['SubscribeURL']);
-    curl_exec($ch);
+        curl_close($handle);
+        info($output);
 
-    if (!curl_errno($ch)) {
-      throw new SesConfirmationFailed();
-    }
-  }
-
-  /**
-   * @param string $type
-   * @return array mixed
-   */
-  private function getNotificationOfType($type)
-  {
-    if (!in_array($type, ['SubscriptionConfirmation', 'Notification'])) {
-      throw new \InvalidArgumentException("Type $type is wrong");
-    }
-    $message = Message::fromRawPostData();
-    if (config('ses-manager.use_validator') && !config('ses-manager.payload_only')) {
-      $this->validateSnsMessage();
+        if (!curl_errno($handle)) {
+            throw new SesConfirmationFailed();
+        }
     }
 
-    $message = $message->toArray();
 
-    if ($message['Type'] !== $type) {
-      return null;
+    public function getPayload()
+    {
+        $rawRequestBody = file_get_contents('php://input');
+
+        $data = json_decode($rawRequestBody, true);
+
+        if (JSON_ERROR_NONE !== json_last_error() || !is_array($data)) {
+            throw new \RuntimeException('Invalid POST data.');
+        }
+
+        return new \Jfunu\LaravelSesManager\Message($data);
     }
 
-    return $message;
-  }
-
-  protected function validateSnsMessage()
-  {
-    $validator = new MessageValidator();
-    // Validate the message
-    try {
-      $validator->validate($message);
-    } catch (InvalidSnsMessageException $e) {
-      Log::error('SNS Message Validation Error: ' . $e->getMessage());
-      throw $e;
-    }
-  }
 }
