@@ -5,6 +5,7 @@ namespace Jfunu\LaravelSesManager;
 
 
 use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Jfunu\LaravelSesManager\DTO\Message;
 use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
 
 class SESMessageValidator implements SESMessageValidatorContract
@@ -32,14 +33,13 @@ class SESMessageValidator implements SESMessageValidatorContract
         curl_setopt($handle, CURLOPT_URL, $url);
         curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 
-        $output = curl_exec($handle);
-
-        curl_close($handle);
-        info($output);
+        curl_exec($handle);
 
         if (!curl_errno($handle)) {
             throw new SesConfirmationFailed();
         }
+
+        curl_close($handle);
     }
 
 
@@ -53,7 +53,7 @@ class SESMessageValidator implements SESMessageValidatorContract
             throw new \RuntimeException('Invalid POST data.');
         }
 
-        return new \Jfunu\LaravelSesManager\Message($data);
+        return new Message($data);
     }
 
 }
