@@ -12,6 +12,9 @@ class LaravelSesManagerServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../migrations');
 
+        $this->loadFactoriesFrom(__DIR__.'/../factories');
+
+
         $this->mergeConfigFrom(
             $this->getConfigFilePath(),
             'ses-manager'
