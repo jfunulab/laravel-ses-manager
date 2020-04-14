@@ -45,12 +45,16 @@ class SESMessageValidator implements SESMessageValidatorContract
 
     public function getPayload()
     {
-        $rawRequestBody = file_get_contents('php://input');
+        $data = request()->all();
 
-        $data = json_decode($rawRequestBody, true);
+        if(!is_array($data)){
+            $rawRequestBody = file_get_contents('php://input');
 
-        if (JSON_ERROR_NONE !== json_last_error() || !is_array($data)) {
-            throw new \RuntimeException('Invalid POST data.');
+            $data = json_decode($rawRequestBody, true);
+
+            if (JSON_ERROR_NONE !== json_last_error() || !is_array($data)) {
+                throw new \RuntimeException('Invalid POST data.');
+            }
         }
 
         return new Message($data);

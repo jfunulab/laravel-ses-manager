@@ -28,6 +28,10 @@ class LaravelSesManagerServiceProvider extends ServiceProvider
         $this->publishes([
             $this->getConfigFilePath() => config_path('ses-manager.php'),
         ]);
+
+        $this->publishes([
+            __DIR__.'/../migrations', database_path('migrations')
+        ]);
     }
 
     private function getConfigFilePath()
