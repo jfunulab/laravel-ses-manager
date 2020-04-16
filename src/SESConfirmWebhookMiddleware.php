@@ -28,6 +28,10 @@ class SESConfirmWebhookMiddleware
    */
   function handle (Request $request, $next) {
 
+      if (!$request->hasHeader('X-Amz-Sns-Topic-Arn')  || config('ses-manager.sns.topic_arn') !== $request->header('X-Amz-Sns-Topic-Arn')) {
+          return new Response('Bad Request', 400);
+      }
+
       if ($this->messageValidatorContract->payload->notificationType == 'SubscriptionConfirmation') {
           $this->messageValidatorContract->confirmSubscription($this->messageValidatorContract->payload->message);
           return new Response('confirmed', 200);

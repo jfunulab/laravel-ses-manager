@@ -47,7 +47,7 @@ class SESMessageValidator implements SESMessageValidatorContract
     {
         $data = request()->all();
 
-        if(!is_array($data)){
+        if(!is_array($data) || empty($data)){
             $rawRequestBody = file_get_contents('php://input');
 
             $data = json_decode($rawRequestBody, true);
