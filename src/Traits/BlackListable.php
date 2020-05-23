@@ -12,9 +12,7 @@ trait BlackListable
 
     public function getIsBlacklistedAttribute()
     {
-        $blacklistedEmail = BlackListItem::where('email', $this->email)->first();
-
-        return !is_null($blacklistedEmail);
+        return BlackListItem::where('email', $this->email)->whereNotNull('blacklisted_at')->count() > 0;
     }
 
     public function getHasComplainedAttribute()
