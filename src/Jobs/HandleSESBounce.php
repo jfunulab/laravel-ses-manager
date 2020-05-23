@@ -24,7 +24,7 @@ class HandleSESBounce
         $bouncedEmails = collect($bounce['bouncedRecipients']);
         $bouncedAt = Carbon::parse($bounce['timestamp']);
 
-        $useManualBlackList = $bounce['bounceType'] === 'Transient' && $bounce['bounceSubType'] !== 'AttachmentRejected';
+        $useManualBlackList = $bounce['bounceType'] === 'Transient';
 
 
         DB::beginTransaction();
