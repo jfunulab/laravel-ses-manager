@@ -27,8 +27,11 @@ class SESConfirmWebhookMiddleware
    * @throws Exceptions\SesConfirmationFailed
    */
   function handle (Request $request, $next) {
-
-      if (!$request->hasHeader('X-Amz-Sns-Topic-Arn')  || config('ses-manager.sns.topic_arn') !== $request->header('X-Amz-Sns-Topic-Arn')) {
+      if (
+          !$request->hasHeader('X-Amz-Sns-Topic-Arn')  &&
+          (config('ses-manager.sns.bounce_topic_arn') !== $request->header('X-Amz-Sns-Topic-Arn') ||
+              config('ses-manager.sns.complaint_topic_arn') !== $request->header('X-Amz-Sns-Topic-Arn'))
+      ) {
           return new Response('Bad Request', 400);
       }
 
