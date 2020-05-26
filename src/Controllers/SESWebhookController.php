@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Controllers;
+namespace Megaverse\LaravelSesManager\Controllers;
 
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
-use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
-use Jfunu\LaravelSesManager\SESConfirmWebhookMiddleware;
-use Jfunu\LaravelSesManager\SESMessageValidator;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\Jobs\HandleSESBounce;
+use Megaverse\LaravelSesManager\Jobs\HandleSESComplaint;
+use Megaverse\LaravelSesManager\SESConfirmWebhookMiddleware;
+use Megaverse\LaravelSesManager\SESMessageValidator;
+use Megaverse\LaravelSesManager\Exceptions\WrongWebhookRouting;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Routing\Controller;
 use Illuminate\Foundation\Bus\DispatchesJobs;

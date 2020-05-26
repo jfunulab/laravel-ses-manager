@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager;
+namespace Megaverse\LaravelSesManager;
 
 
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Jfunu\LaravelSesManager\DTO\Message;
-use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\DTO\Message;
+use Megaverse\LaravelSesManager\Exceptions\SesConfirmationFailed;
 
 class SESMessageValidator implements SESMessageValidatorContract
 {

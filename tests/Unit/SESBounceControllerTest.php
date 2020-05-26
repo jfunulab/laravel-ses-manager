@@ -1,17 +1,17 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Tests\Unit;
+namespace Megaverse\LaravelSesManager\Tests\Unit;
 
 
 use Illuminate\Http\Request;
 use Mockery\Mock;
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Jfunu\LaravelSesManager\Controllers\SESWebhookController;
-use Jfunu\LaravelSesManager\SESConfirmWebhookMiddleware;
-use Jfunu\LaravelSesManager\SESMessageValidator;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use Jfunu\LaravelSesManager\Tests\TestCase;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\Controllers\SESWebhookController;
+use Megaverse\LaravelSesManager\SESConfirmWebhookMiddleware;
+use Megaverse\LaravelSesManager\SESMessageValidator;
+use Megaverse\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Megaverse\LaravelSesManager\Tests\TestCase;
 
 class SESBounceControllerTest extends TestCase
 {

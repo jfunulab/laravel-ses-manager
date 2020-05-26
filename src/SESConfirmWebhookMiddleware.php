@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager;
+namespace Megaverse\LaravelSesManager;
 
 use Illuminate\Http\Request;
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\Exceptions\WrongWebhookRouting;
 use Symfony\Component\HttpFoundation\Response;
 
 class SESConfirmWebhookMiddleware

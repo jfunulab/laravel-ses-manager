@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
-use Jfunu\LaravelSesManager\Eloquent\BlackListItem;
+use Megaverse\LaravelSesManager\Eloquent\BlackListGroup;
+use Megaverse\LaravelSesManager\Eloquent\BlackListItem;
 
 class CreateEmailBlacklists extends Migration
 {

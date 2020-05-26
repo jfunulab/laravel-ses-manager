@@ -5,8 +5,8 @@
 
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
-use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
-use Jfunu\LaravelSesManager\Eloquent\BlackListItem;
+use Megaverse\LaravelSesManager\Eloquent\BlackListGroup;
+use Megaverse\LaravelSesManager\Eloquent\BlackListItem;
 
 $factory->define(BlackListItem::class, function (Faker $faker) {
     return [

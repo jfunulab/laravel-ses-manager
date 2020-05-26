@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Jobs;
+namespace Megaverse\LaravelSesManager\Jobs;
 
 
 use Illuminate\Support\Facades\DB;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaint;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaint;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaintGroup;
 
 class HandleSESComplaint
 {

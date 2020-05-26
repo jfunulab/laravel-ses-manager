@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Contracts;
+namespace Megaverse\LaravelSesManager\Contracts;
 
-use Jfunu\LaravelSesManager\Exceptions\SesConfirmationFailed;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Megaverse\LaravelSesManager\Exceptions\SesConfirmationFailed;
+use Megaverse\LaravelSesManager\Exceptions\WrongWebhookRouting;
 
 interface SESMessageValidatorContract
 {

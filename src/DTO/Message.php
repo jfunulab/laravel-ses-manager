@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\DTO;
+namespace Megaverse\LaravelSesManager\DTO;
 
 
 class Message

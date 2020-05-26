@@ -1,9 +1,9 @@
 <?php
 
-namespace Jfunu\LaravelSesManager\Tests;
+namespace Megaverse\LaravelSesManager\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Jfunu\LaravelSesManager\Controllers\SESWebhookController;
+use Megaverse\LaravelSesManager\Controllers\SESWebhookController;
 
 class TestCase extends Orchestra
 {
@@ -35,7 +35,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            \Jfunu\LaravelSesManager\LaravelSesManagerServiceProvider::class,
+            \Megaverse\LaravelSesManager\LaravelSesManagerServiceProvider::class,
         ];
     }
     /**

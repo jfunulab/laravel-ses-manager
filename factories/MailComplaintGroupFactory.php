@@ -5,7 +5,7 @@
 
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaintGroup;
 
 $factory->define(MailComplaintGroup::class, function (Faker $faker) {
     return [

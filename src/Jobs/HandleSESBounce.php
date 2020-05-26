@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Jobs;
+namespace Megaverse\LaravelSesManager\Jobs;
 
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
-use Jfunu\LaravelSesManager\Eloquent\BlackListItem;
+use Megaverse\LaravelSesManager\Eloquent\BlackListGroup;
+use Megaverse\LaravelSesManager\Eloquent\BlackListItem;
 
 class HandleSESBounce
 {

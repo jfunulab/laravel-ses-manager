@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Eloquent;
+namespace Megaverse\LaravelSesManager\Eloquent;
 
 use Illuminate\Database\Eloquent\Model;
 

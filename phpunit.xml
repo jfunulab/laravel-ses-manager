@@ -10,7 +10,7 @@
          stopOnFailure="false">
 
     <testsuites>
-        <testsuite name="Jfunu/laravel-ses-manager Test Suite">
+        <testsuite name="Megaverse/laravel-ses-manager Test Suite">
             <directory>tests</directory>
         </testsuite>
     </testsuites>

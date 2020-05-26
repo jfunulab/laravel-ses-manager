@@ -1,5 +1,5 @@
 {
-  "name": "jfunu/laravel-ses-manager",
+  "name": "megaverse/laravel-ses-manager",
   "description": "Logs SES bounces and complaints for Laravel app",
   "type": "package",
   "license": "MIT",
@@ -8,18 +8,18 @@
   ],
   "authors": [
     {
-      "name": "Jfunu",
+      "name": "jfunulab",
       "email": "jfunu79@gmail.com"
     }
   ],
   "autoload": {
     "psr-4": {
-      "Jfunu\\LaravelSesManager\\": "./src"
+      "Megaverse\\LaravelSesManager\\": "./src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Jfunu\\LaravelSesManager\\Tests\\": "./tests"
+      "Megaverse\\LaravelSesManager\\Tests\\": "./tests"
     }
   },
   "require": {
@@ -37,7 +37,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Jfunu\\LaravelSesManager\\LaravelSesManagerServiceProvider"
+        "Megaverse\\LaravelSesManager\\LaravelSesManagerServiceProvider"
       ]
     }
   }

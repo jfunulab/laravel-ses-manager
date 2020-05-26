@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Traits;
+namespace Megaverse\LaravelSesManager\Traits;
 
 
-use Jfunu\LaravelSesManager\Eloquent\BlackListItem;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaint;
+use Megaverse\LaravelSesManager\Eloquent\BlackListItem;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaint;
 
 trait BlackListable
 {

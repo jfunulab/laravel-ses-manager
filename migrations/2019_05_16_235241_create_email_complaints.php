@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaint;
-use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaint;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaintGroup;
 
 class CreateEmailComplaints extends Migration
 {

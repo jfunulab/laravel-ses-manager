@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Tests\Unit;
+namespace Megaverse\LaravelSesManager\Tests\Unit;
 
 
-use Jfunu\LaravelSesManager\Eloquent\BlackListGroup;
-use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
-use Jfunu\LaravelSesManager\Tests\TestCase;
+use Megaverse\LaravelSesManager\Eloquent\BlackListGroup;
+use Megaverse\LaravelSesManager\Jobs\HandleSESBounce;
+use Megaverse\LaravelSesManager\Tests\TestCase;
 
 class HandleSESBounceTest extends TestCase
 {

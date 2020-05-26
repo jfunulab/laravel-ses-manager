@@ -1,9 +1,9 @@
 <?php
 
-namespace Jfunu\LaravelSesManager;
+namespace Megaverse\LaravelSesManager;
 
 use Illuminate\Support\ServiceProvider;
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
 
 class LaravelSesManagerServiceProvider extends ServiceProvider
 {

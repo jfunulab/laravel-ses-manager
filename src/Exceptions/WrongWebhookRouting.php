@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Exceptions;
+namespace Megaverse\LaravelSesManager\Exceptions;
 
 
 class WrongWebhookRouting extends \Exception

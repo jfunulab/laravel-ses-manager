@@ -1,15 +1,15 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Tests\Feature;
+namespace Megaverse\LaravelSesManager\Tests\Feature;
 
 
 use Illuminate\Support\Facades\Bus;
-use Jfunu\LaravelSesManager\Contracts\SESMessageValidatorContract;
-use Jfunu\LaravelSesManager\Jobs\HandleSESBounce;
-use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
-use Jfunu\LaravelSesManager\Exceptions\WrongWebhookRouting;
-use Jfunu\LaravelSesManager\Tests\TestCase;
+use Megaverse\LaravelSesManager\Contracts\SESMessageValidatorContract;
+use Megaverse\LaravelSesManager\Jobs\HandleSESBounce;
+use Megaverse\LaravelSesManager\Jobs\HandleSESComplaint;
+use Megaverse\LaravelSesManager\Exceptions\WrongWebhookRouting;
+use Megaverse\LaravelSesManager\Tests\TestCase;
 
 class SESWebhooksTest extends TestCase
 {

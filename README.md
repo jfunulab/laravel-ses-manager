@@ -3,7 +3,7 @@ Logs AWS Simple Email Service bounces and complaints for Laravel app
 
 # Setup
 ```bash
-composer require jfunu/laravel-ses-manager
+composer require Megaverse/laravel-ses-manager
 php artisan migrate
 ```
 
@@ -11,17 +11,17 @@ php artisan migrate
 
 ```php
 // api.php
-Route::post('/webhooks/ses/bounce', [Jfunu\LaravelSesManager\Controllers::class, 'bounce']);
-Route::post('/webhooks/ses/complaint', [Jfunu\LaravelSesManager\Controllers::class, 'complaint']);
+Route::post('/webhooks/ses/bounce', [Megaverse\LaravelSesManager\Controllers::class, 'bounce']);
+Route::post('/webhooks/ses/complaint', [Megaverse\LaravelSesManager\Controllers::class, 'complaint']);
 ```
 
 - Map the hooks in your SES dashboard to the your application routes.
 
 # Usage
-Use `Jfunu\LaravelSesManager\Eloquent\BlackListItem` is the model for blacklisted emails.
+Use `Megaverse\LaravelSesManager\Eloquent\BlackListItem` is the model for blacklisted emails.
 ```php
 // check if email is blacklisted
-$blackListItem = Jfunu\LaravelSesManager\Eloquent\BlackListItem::query()
+$blackListItem = Megaverse\LaravelSesManager\Eloquent\BlackListItem::query()
   ->whereNotNull('blacklisted_at')
   ->where('email', $email)
   ->first();

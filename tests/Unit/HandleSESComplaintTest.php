@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Jfunu\LaravelSesManager\Tests\Unit;
+namespace Megaverse\LaravelSesManager\Tests\Unit;
 
 
-use Jfunu\LaravelSesManager\Eloquent\MailComplaintGroup;
-use Jfunu\LaravelSesManager\Jobs\HandleSESComplaint;
-use Jfunu\LaravelSesManager\Tests\TestCase;
+use Megaverse\LaravelSesManager\Eloquent\MailComplaintGroup;
+use Megaverse\LaravelSesManager\Jobs\HandleSESComplaint;
+use Megaverse\LaravelSesManager\Tests\TestCase;
 
 class HandleSESComplaintTest extends TestCase
 {
