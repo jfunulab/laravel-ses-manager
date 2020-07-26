@@ -11,8 +11,8 @@ php artisan migrate
 
 ```php
 // api.php
-Route::post('/webhooks/ses/bounce', [Megaverse\LaravelSesManager\Controllers::class, 'bounce']);
-Route::post('/webhooks/ses/complaint', [Megaverse\LaravelSesManager\Controllers::class, 'complaint']);
+Route::post('/webhooks/ses/bounce', [Megaverse\LaravelSesManager\Controllers\SESWebhookController::class, 'bounce']);
+Route::post('/webhooks/ses/complaint', [Megaverse\LaravelSesManager\Controllers\SESWebhookController::class, 'complaint']);
 ```
 
 - Map the hooks in your SES dashboard to the your application routes.

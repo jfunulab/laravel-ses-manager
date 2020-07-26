@@ -35,7 +35,7 @@ class SESMessageValidator implements SESMessageValidatorContract
 
         curl_exec($handle);
 
-        if (!curl_errno($handle)) {
+        if (curl_errno($handle)) {
             throw new SesConfirmationFailed();
         }
 
