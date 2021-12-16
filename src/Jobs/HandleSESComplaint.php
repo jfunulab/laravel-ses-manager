@@ -28,7 +28,7 @@ class HandleSESComplaint
             'driver' => 'ses',
             'complained_at' => $complainTimestamp,
             'payload' => $this->message,
-            'reason' => $complaint['complaintFeedbackType'],
+            'reason' => $complaint['complaintFeedbackType'] ?? null,
         ])->id;
 
         $now = now();
