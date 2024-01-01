@@ -24,12 +24,12 @@
   },
   "require": {
     "aws/aws-php-sns-message-validator": "^1.5",
-    "illuminate/support": "^5.8 | ^6.0 | ^7.0",
+    "illuminate/support": "^5.8 | ^6.0 | ^7.0 | ^8.0 | ^9.0 | ^10.0",
     "ext-json": "*",
     "ext-curl": "*"
   },
   "require-dev": {
-    "orchestra/testbench": "^3.8"
+    "orchestra/testbench": "^3.8 | ^8.0"
   },
   "scripts": {
     "test": "phpunit"
